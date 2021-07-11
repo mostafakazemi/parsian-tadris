@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <!-- Responsive -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Title -->
+    <title>ارتباط با ما</title>
+
+    <!-- Meta Tags required for
+         Progressive Web App -->
+    <meta name="apple-mobile-web-app-status-bar" content="#aa7700">
+    <meta name="theme-color" content="black">
+
+    <!-- Manifest File link -->
+    <link rel="manifest" href="manifest.json">
+
+    <link rel="stylesheet" href="/assets/styles/main.css">
+</head>
+
+<body>
+<header>
+    <div class="link">
+        <a href="/">خانه</a>
+        <a href="/contact-us.html">ارتباط با ما</a>
+    </div>
+    <div><img src="/images/icon-192.png" alt="لوگو پارسیان تدریس" width="45" height="45"></div>
+</header>
+
+<section class="form">
+    <form id="form">
+        <div>
+            <label for="name">
+                نام:
+            </label>
+            <input type="text" dir="auto" id="name" autofocus>
+        </div>
+        <div>
+            <label for="family">
+                نام خانوادگی:
+            </label>
+            <input type="text" dir="auto" id="family">
+        </div>
+        <div>
+            <button type="submit">ثبت</button>
+        </div>
+    </form>
+</section>
+
+
+<script src="assets/js/service-worker.js"></script>
+<script src="assets/js/register-service-worker.js"></script>
+<script>
+    form = document.getElementById('form')
+    form.addEventListener('submit', function () {
+        event.preventDefault()
+        var textName = document.getElementById('name').value
+        var textFamily = document.getElementById('family').value
+        alert(
+            'فرم ارسال شد!' +
+            '\n' +
+            'نام و نام خانوادگی:' +
+            '\n' +
+            textName + ' ' + textFamily
+        )
+    });
+</script>
+</body>
+</html>

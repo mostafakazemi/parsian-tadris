@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <!-- Responsive -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Title -->
+    <title>صفحه اصلی</title>
+
+    <!-- Meta Tags required for
+         Progressive Web App -->
+    <meta name="apple-mobile-web-app-status-bar" content="#aa7700">
+    <meta name="theme-color" content="black">
+
+    <!-- Manifest File link -->
+    <link rel="manifest" href="manifest.json">
+
+    <link rel="stylesheet" href="/assets/styles/main.css">
+</head>
+
+<body>
+<header>
+    <div class="link">
+        <a href="/">خانه</a>
+        <a href="/contact-us.html">ارتباط با ما</a>
+    </div>
+    <div><img src="/images/icon-192.png" alt="لوگو پارسیان تدریس" width="45" height="45"></div>
+</header>
+
+<section class="buttons">
+    <div>
+        <button onclick="showModal('۱')">۱</button>
+        <button onclick="showModal('۲')">۲</button>
+    </div>
+    <div>
+        <button onclick="showModal('۳')">۳</button>
+        <button onclick="showModal('۴')">۴</button>
+    </div>
+    <div>
+        <button onclick="showModal('۵')">۵</button>
+        <button onclick="showModal('۶')">۶</button>
+    </div>
+</section>
+
+<div class="modal-mold" id="modal">
+    <div class="content">
+        <div class="header">
+            <div class="close" onclick="closeModal()"><span>X</span></div>
+            <div class="title">هدر مدال</div>
+        </div>
+        <div class="body">
+            <span>دکمه </span>
+            <span id="caption"></span>
+            <span> انتخاب شد!</span>
+        </div>
+    </div>
+</div>
+
+<script src="assets/js/service-worker.js"></script>
+<script src="assets/js/register-service-worker.js"></script>
+<script>
+    function showModal(number) {
+        modal = document.getElementById('modal')
+        caption = document.getElementById('caption')
+        caption.innerHTML = number
+        modal.style.display = 'flex'
+    }
+
+    function closeModal() {
+        modal = document.getElementById('modal')
+        modal.style.display = 'none'
+    }
+</script>
+</body>
+</html>
